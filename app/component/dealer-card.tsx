@@ -23,7 +23,7 @@ const DealerCard: React.FC<DealerCardProps> = ({
         </p>
 
       </div>
-      <p className="p-4 text-4xl font-bold">{count}</p>
+      <p className="p-4 text-4xl text-black font-bold">{count}</p>
     </div>
   );
 };
