@@ -1,5 +1,9 @@
+import DealerHome from "./component/dealer-home";
+
 export default function Home() {
   return (
-  <div>Hello, World, Hello, World!</div>
+  <div>
+    <DealerHome />
+  </div>
 );
 }
