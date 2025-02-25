@@ -1,8 +1,15 @@
 "use client"
-
+import { useState } from "react";
 import DealerCard from "./dealer-card";
+import QrScanner from "./QrScanner";
 
 const DealerHome = () => {
+  const [scannedCode, setScannedCode] = useState(null);
+
+  const handleScanSuccess = (decodedText) => {
+    setScannedCode(decodedText);
+    alert(`QR Code scanned: ${decodedText}`);
+  };
   return (
     <>
           <div className="flex justify-between items-center px-8 py-4 mt-4">
@@ -68,6 +75,11 @@ const DealerHome = () => {
         />
       
       </div>
+      <div style={{ padding: "20px" }}>
+      <h1>QR Code Scanner</h1>
+      <QrScanner onScanSuccess={handleScanSuccess} />
+      {scannedCode && <p>Scanned QR Code: {scannedCode}</p>}
+    </div>
     </>
   );
 };
