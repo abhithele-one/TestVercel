@@ -1,7 +1,9 @@
 "use client";
-
+import dynamic from 'next/dynamic';
+const QRCodeScanner = dynamic(() => import('./QRCodeScanner'), {
+  ssr: false,
+});
 import DealerCard from "./dealer-card";
-import QRCodeScanner from "./QRCodeScanner";
 
 const DealerHome: React.FC = () => {
   return (
