@@ -42,7 +42,7 @@ const QRCodeScanner: React.FC = () => {
       <h2>QR Code Scanner</h2>
       <div id="scanner" ref={scannerRef} style={{ width: '100%', height: '400px' }}></div>
       {!scanning && (
-        <button onClick={() => setScanning(true)}>Start Scanning</button>
+        <button style={{ backgroundColor: "red" }} onClick={() => setScanning(true)}>Start Scanning</button>
       )}
     </div>
   );
