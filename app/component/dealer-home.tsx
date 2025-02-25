@@ -1,18 +1,12 @@
-"use client"
-import { useState } from "react";
+"use client";
+
 import DealerCard from "./dealer-card";
-import QrScanner from "./QrScanner";
+import QRCodeScanner from "./QRCodeScanner";
 
-const DealerHome = () => {
-  const [scannedCode, setScannedCode] = useState(null);
-
-  const handleScanSuccess = (decodedText) => {
-    setScannedCode(decodedText);
-    alert(`QR Code scanned: ${decodedText}`);
-  };
+const DealerHome: React.FC = () => {
   return (
     <>
-          <div className="flex justify-between items-center px-8 py-4 mt-4">
+      <div className="flex justify-between items-center px-8 py-4 mt-4">
         <div className="w-24 h-12">
           <img
             className="w-24 h-12 rounded-lg"
@@ -45,40 +39,18 @@ const DealerHome = () => {
       </div>
       <div className="text-3xl px-8 py-2">
         <p>Manage your Inventory with ease! 🚀</p>
-        </div>
-      <div className="flex justify-between px-4">
-        <DealerCard
-          count="110"
-          title1="Total"
-          title2="Inventory"
-         
-        />
-        <DealerCard
-          count="110"
-          title1="Sold"
-          title2="Items"
-
-        />
       </div>
       <div className="flex justify-between px-4">
-        <DealerCard
-          count="110"
-          title1="Pending"
-          title2="Issues"
-
-        />
-        <DealerCard
-          count="110"
-          title1="Active"
-          title2="Warranty"
-
-        />
-      
+        <DealerCard count="110" title1="Total" title2="Inventory" />
+        <DealerCard count="110" title1="Sold" title2="Items" />
       </div>
-      <div style={{ padding: "20px" }}>
-      <h1>QR Code Scanner</h1>
-      <QrScanner onScanSuccess={handleScanSuccess} />
-      {scannedCode && <p>Scanned QR Code: {scannedCode}</p>}
+      <div className="flex justify-between px-4">
+        <DealerCard count="110" title1="Pending" title2="Issues" />
+        <DealerCard count="110" title1="Active" title2="Warranty" />
+      </div>
+      <div>
+      <h1>Next.js QR Code Scanner</h1>
+      <QRCodeScanner />
     </div>
     </>
   );
